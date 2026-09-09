@@ -2,6 +2,7 @@
 
 **Browser-Native Touchless Spatial Workspace and Operating System**
 
+[![NPM Version](https://img.shields.io/npm/v/nexadesk.svg)](https://www.npmjs.com/package/nexadesk)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
 [![Framework: Next.js 16](https://img.shields.io/badge/Framework-Next.js%2016-black.svg)](https://nextjs.org/)
 [![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript%205-blue.svg)](https://www.typescriptlang.org/)
@@ -97,13 +98,73 @@ nexadesk/
 │   └── og-image.png         # OpenGraph social preview graphic
 ├── eslint.config.mjs        # ESLint flat configuration
 ├── index.html               # Standalone zero-dependency HTML entry
-├── LICENSE                  # MIT License verbatim text
+├── LICENSE                  # GNU Affero General Public License v3.0 verbatim text
 ├── main.js                  # Standalone client script (mirrored with public/main.js)
 ├── next.config.ts           # Next.js static export build configuration
 ├── package.json             # Project metadata, dependencies, scripts
 ├── style.css                # Standalone CSS stylesheet
 └── tsconfig.json            # TypeScript compiler configuration
 ```
+
+---
+
+## NPM Package Distribution
+
+NexaDesk is published on NPM as a modular React component and spatial computing library:
+
+[![NPM Version](https://img.shields.io/npm/v/nexadesk.svg)](https://www.npmjs.com/package/nexadesk)
+
+### Installation via Package Manager
+
+```bash
+npm install nexadesk
+```
+
+Or with Yarn / PNPM:
+
+```bash
+pnpm add nexadesk
+# or
+yarn add nexadesk
+```
+
+### Quick Usage in React / Next.js
+
+Import the pre-built desktop workspace or individual spatial hooks and components:
+
+```tsx
+'use client';
+
+import React from 'react';
+import { NexaDesk } from 'nexadesk';
+import 'nexadesk/style.css';
+
+export default function WorkspacePage() {
+  return (
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+      <NexaDesk
+        enableWebcam={true}
+        enableSimulator={true}
+        showBubble={true}
+        theme="dark"
+      />
+    </div>
+  );
+}
+```
+
+### Modular Subpath Imports
+
+The NPM package is tree-shakeable and provides modular subpath entrypoints:
+
+- `nexadesk`: Full suite, high-level `NexaDesk` desktop container, and core exports
+- `nexadesk/components`: Individual UI components (`NexaWindow`, `NexaCursor`, `WebcamBubble`, `NexaTaskbar`, `VirtualKeyboard`, `HandSimulatorWidget`)
+- `nexadesk/hooks`: React hooks (`useWindowManager`, `useGestureDetector`, `useSpatialTracker`, `useHandSimulator`)
+- `nexadesk/utils`: Signal filters (`OneEuroFilter`, `LowPassFilter`), gesture math (`classifyGesture`, `euclideanDistance`), and constants
+- `nexadesk/style.css`: Glassmorphic styling and hardware-accelerated animations
+
+Package Registry: [npmjs.com/package/nexadesk](https://www.npmjs.com/package/nexadesk)  
+NPM Package Repository: [code-dibyajyotirout/nexadesk-npm-package](https://github.com/code-dibyajyotirout/nexadesk-npm-package)
 
 ---
 
