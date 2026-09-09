@@ -1,0 +1,74 @@
+# Dependencies
+/node_modules
+/.pnpm-store
+/.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Next.js and Build Outputs
+/.next/
+/out/
+/build
+/dist
+
+# Testing & Coverage
+/coverage
+*.lcov
+.nyc_output
+
+# Environment Variables and Credentials
+.env
+.env*
+*.env
+!.env.example
+
+# IDE and Editor Configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS and Filesystem Metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Vercel Deployment
+.vercel
+
+# TypeScript and Intermediate Caches
+*.tsbuildinfo
+next-env.d.ts
+
+# Internal Assistant and Scratch Files
+instruct.md
+walkthrough.md
+CLAUDE.md
+AGENTS.md
+.cursorrules
+.windsurfrules
+
+# Personal Documents Protection
+*.pdf
+*.PDF
+*.doc
+*.docx
